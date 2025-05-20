@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contaminación Costera en Chile</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema nacional para el monitoreo de Contaminación Costera</h1>
+            <div class="contaminante-selector">
+                <label for="contaminante">Seleccione contaminante:</label>
+                <select id="contaminante">
+                    <option value="plasticos">Plásticos (kg/km)</option>
+                    <option value="petroleo">Petróleo (kg/km)</option>
+                    <option value="quimicos">Químicos (kg/km)</option>
+                    <option value="aguasResiduales">Aguas Residuales (L/km)</option>
+                    <option value="basuraOrganica">Basura Orgánica (kg/km)</option>
+                </select>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="map-container">
+                <div id="map"></div>
+                <div id="comuna-info" class="comuna-info"></div>
+            </div>
+
+            <div class="data-section">
+                <div class="data-panel">
+                    <h2>Top 5 Comunas Más Contaminadas</h2>
+                    <table id="top-table">
+                        <thead>
+                            <tr>
+                                <th>Comuna</th>
+                                <th>Nivel</th>
+                                <th>Tendencia</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="data-panel">
+                    <h2>Datos Históricos</h2>
+                    <table id="historical-table">
+                        <thead>
+                            <tr>
+                                <th>Año</th>
+                                <th>Plásticos (kg)</th>
+                                <th>Variación</th>
+                                <th>Comunas</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-buttons">
+            <button id="download-excel" class="btn">Descargar Datos Comunas (Excel)</button>
+            <button id="download-historical" class="btn">Descargar Datos Históricos (Excel)</button>
+        </div>
+
+        <footer>
+            <p>Datos generados aleatoriamente con fines demostrativos</p>
+            <p>Última actualización: 2023</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
